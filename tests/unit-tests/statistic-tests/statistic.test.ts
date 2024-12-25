@@ -6,7 +6,7 @@ import { ProvablyFairConsumer } from "sc-number-game-base/dist/event-consumers";
 import * as Helpers from "../../../src/helpers/result-helper";
 import Chance from "chance";
 import { SeedHelper } from "sc-game-base/src/core/helpers";
-import gameSettings from "../../../src/game-settings";
+import { getGameSettings } from "../../../src/game-settings";
 import { DrawResult } from "../../../src/models/rounds";
 import { GameConfigs } from "sc-game-base/src/core/game-data";
 
@@ -22,6 +22,7 @@ describe("statistic test", () => {
     const definition = stub<GameDefinition>();
     const publisher = stub<RoundResultPublisher>();
     const provablyFairConsumer = stub<ProvablyFairConsumer>();
+    const gameSettings = getGameSettings(1008);
     const numberOfTurnsToRun = 100_000 * gameSettings.numberOfTurnsPerRound;
 
     beforeEach(() => {

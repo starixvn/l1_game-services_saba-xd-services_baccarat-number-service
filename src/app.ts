@@ -1,11 +1,12 @@
 import { GameData, GameDefinition } from "sc-number-game-base";
 import appConfigs from "./app-configs";
-import gameSettings from "./game-settings";
+import { getGameSettings } from "./game-settings";
 import { resultHelper } from "./helpers";
 import { Core } from "sc-game-base";
 import BaccaratContainerRegistry from "./baccarat-balls-container-registry";
 
 const run = async () => {
+    const gameSettings = getGameSettings(appConfigs.gameId);
     const definition = new GameDefinition(
         gameSettings,
         resultHelper.generateResult,

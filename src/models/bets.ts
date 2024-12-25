@@ -24,15 +24,17 @@ const bet = {
     paid: { type: Boolean, default: false },
 };
 
-const bets = mongoose.model(
-    "bacball1_bets",
-    new mongoose.Schema({
-        ...bet,
-        currency: { type: String },
-        rate: { type: Number, required: true },
-    })
-);
+export const getBetModel = (gameName: string) => {
+    return mongoose.model(
+        `${gameName.toLowerCase()}_bets`,
+        new mongoose.Schema({
+            ...bet,
+            currency: { type: String },
+            rate: { type: Number, required: true },
+        })
+    );
+};
 
-const tmpBets = mongoose.model("bacball1_tmpbets", new mongoose.Schema(bet));
-
-export { bets, tmpBets };
+export const getTmpBetModel = (gameName: string) => {
+    return mongoose.model(`${gameName}_tmpbets`, new mongoose.Schema(bet));
+};

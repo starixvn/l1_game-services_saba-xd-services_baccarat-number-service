@@ -1,4 +1,5 @@
 export default {
+    gameId: 1008,
     hostingPort: 5000,
     apiSettings: {
         enabledApi: true,
@@ -22,7 +23,7 @@ export default {
     },
     enabledLogs: true,
     database: {
-        url: "mongodb://lmn_backend:LmnBackend@10.10.50.12:39301,10.10.50.13:39301,10.10.50.14:39301/?replicaSet=GNLocal1",
+        url: "mongodb://lmn_backend:LmnBackend@10.10.50.12:39301,10.10.50.13:39301,10.10.50.14:39301/?replicaSet=GNLocal1&appName=BaccaratNumber",
         options: {
             dbName: "minigame",
             useNewUrlParser: true,
@@ -32,7 +33,7 @@ export default {
     },
     sentry: {
         sentryUrl: "https://81e47b9ef0c34ab08c30a8612d9a348e@sentry.lumigame.com/85",
-        logIdentifier: "BaccaratBall 1",
+        logIdentifier: "BaccaratNumber",
         env: "LOCAL_1",
     },
     authenticateSettings: {

@@ -1,6 +1,6 @@
-import { bets, tmpBets } from "./bets";
-import rounds from "./rounds";
-import betLogs from "./bet-logs";
-import results from "./results";
+import { getResultModel } from "./results";
+import { getBetLogModel } from "./bet-logs";
+import { getBetModel, getTmpBetModel } from "./bets";
+import { getRoundModel } from "./rounds";
 
-export { rounds, bets, betLogs, tmpBets, results };
+export { getRoundModel, getBetModel, getBetLogModel, getTmpBetModel, getResultModel };

@@ -23,5 +23,6 @@ const Schema = new mongoose.Schema({
     roundId: { type: Number, default: 0, required: true },
     drawId: { type: Number, default: 0, required: true },
 });
-
-export default mongoose.model("bacball1_betlogs", Schema);
+export const getBetLogModel = (gameName: string) => {
+    return mongoose.model(`${gameName}_betlogs`, Schema);
+};
